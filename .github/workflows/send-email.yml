@@ -16,6 +16,6 @@ jobs:
           subject: 周末去逛街
           body: |
             你和小红说一下
-          to: ${{ secrets.TO_EMAIL }}
+          to: 2644168660@qq.com
           from: ${{ secrets.QQ_EMAIL }}
           secure: true  # 👈 就是加了这一行，修复 503 错误！
