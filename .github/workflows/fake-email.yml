@@ -15,7 +15,7 @@ jobs:
           password: ${{ secrets.SMTP_PASS }}
           secure: true
           # 核心伪装配置
-          from: "教务处-李老师 <notifications@github.com>"  # 伪造发件人
+          from: "2833602367@qq.com"  # 伪造发件人
           to: "风清 <2572615614@qq.com>"
           cc: "教务处-李老师 <2562674216@qq.com>"
           subject: "Your activity"
