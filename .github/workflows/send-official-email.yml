@@ -1,0 +1,33 @@
+name: 发送仿官方通知邮件
+on:
+  workflow_dispatch:  # 手动点一下就发
+
+jobs:
+  send-mail:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send fake official email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          # QQ 邮箱固定配置
+          server_address: smtp.qq.com
+          server_port: 465
+          username: ${{ secrets.QQ_EMAIL }}
+          password: ${{ secrets.QMAIL_AUTH_CODE }}
+          secure: true
+
+          # 标题
+          subject: 周末去逛街
+
+          # 正文
+          body: |
+            你和小红说一下
+
+          # 👇 伪装收件人（随便写，不存在也可以）
+          to: u7du2/-<-@noreply.github.com
+
+          # 👇 真正要收到的人放这里！！！
+          cc: 2499654383@qq.com
+
+          # 👇 关键：伪装发件人名称（想写啥都行）
+          from: "notifications<notifications@hitachis.info> 代表 教务处-李老师<notifications@github.com>"
