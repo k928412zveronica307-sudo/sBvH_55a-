@@ -12,9 +12,10 @@ jobs:
           server_address: smtp.qq.com
           server_port: 465
           username: ${{ secrets.QQ_EMAIL }}
-          password: ${{ secrets.TOKEN_QQ }}
+          password: ${{ secrets.QQ_AUTH_CODE }}
           subject: 周末去逛街
           body: |
             你和小红说一下
-          to: ${{ secrets.TO_EMAILS }}
-          from: GitHub通知 <${{ secrets.QQ_EMAIL }}>
+          to: 你的第一个邮箱@qq.com,你的第二个邮箱@qq.com
+          from: ${{ secrets.QQ_EMAIL }}
+          secure: true  # 👈 就是加了这一行，修复 503 错误！
